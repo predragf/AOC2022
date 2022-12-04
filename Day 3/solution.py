@@ -28,7 +28,7 @@ def part_two(_input):
     for line_idx, line in enumerate(_input, start=1):
         group_items[line_idx % 3] = set(line.strip())
         if line_idx % group_size == 0:
-            priority_sum = priority_sum + sum(character_priorities.get(character, 0) for character in group_items[0].intersection(*group_items))            
+            priority_sum = priority_sum + sum(character_priorities.get(character, 0) for character in group_items[0].intersection(*group_items[1:]))            
             group_items = [set()] * group_size
     return priority_sum, perf_counter_ns() - start_time
 
