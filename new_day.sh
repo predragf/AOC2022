@@ -1,4 +1,4 @@
-current_day="Day ${1}"
+current_day="Day_${1}"
 
 mkdir ./"${current_day}"
 cd ./"${current_day}"
@@ -28,7 +28,8 @@ def main():
     print(f\"solution first part: {solution_part_one} ({part_one_time_ns / 1_000_000} ms)\")
     print(f\"solution second part: {solution_part_two} ({part_two_time_ns / 1_000_000} ms)\")
 
-main()
+if __name__ == \"__main__\":
+    main()
 " > ./solution.py
 touch ./sample.txt
 touch ./input.txt
