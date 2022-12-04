@@ -39,9 +39,10 @@ def main():
     
     solution_part_one, part_one_time_ns = part_one(_input)    
     solution_part_two, part_two_time_ns = part_two(_input)
-    print("---------- Day 3 ----------")
+    print("---------- Day_3 ----------")
     print(f"solution first part: {solution_part_one} ({part_one_time_ns / 1_000_000} ms)")
     print(f"solution second part: {solution_part_two} ({part_two_time_ns / 1_000_000} ms)")    
 
-main()
+if __name__ == "__main__":
+    main()
 

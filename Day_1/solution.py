@@ -19,9 +19,11 @@ def main():
     p2 = perf_counter_ns()
     solution_2 = problem_2(_input)
     p3 = perf_counter_ns()
-    
+
+    print("---------- Day_1 ----------")
     print(f"solution first part: {solution_1} ({(p2-p1)/1_000_000})")
     print(f"solution second part: {solution_2} ({(p3-p2)/1_000_000})")
 
-main()
+if __name__ == "__main__":
+    main()
 

@@ -1,6 +1,6 @@
+clear;
 for i in $(ls -d */); do
-    cd ./"$i"
-    echo $(pwd)
+    cd ./"$i"    
     python ./solution.py
     cd ..
 done
