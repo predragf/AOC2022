@@ -1,11 +1,11 @@
 #! /usr/bin/python3
-from time import perf_counter_ns
 import re
-
+from time import perf_counter_ns
+from string import ascii_uppercase
 
 def part_one(_input):
     start_time = perf_counter_ns()
-
+    upper_case_letters_set = set(ascii_uppercase)
     stacks = []        
     reading_moves = False
     for line in _input:        
@@ -26,17 +26,16 @@ def part_one(_input):
             line_parts = re.sub("\s{4}", " [0] ", line).split()        
             if not stacks: # initialize stacks after the first row has been read
                 stacks = [""] * (len(line_parts) + 1)
-            for stack_index, crate in enumerate(line_parts, start=1):
-                crate_match = re.match("\[([A-Z])\]", crate)
-                if crate_match:
-                    crate_name = crate_match.group(1)                    
-                    stacks[stack_index] = f"{crate_name}{stacks[stack_index]}"      
+            for stack_index, crate in enumerate(line_parts, start=1):                
+                if len(crate) > 1 and crate[1] in upper_case_letters_set:                                        
+                    stacks[stack_index] = f"{crate[1]}{stacks[stack_index]}"      
                      
     output = [stack[-1] for stack in stacks if stack]    
     return "".join(output), perf_counter_ns() - start_time
 
 def part_two(_input):
     start_time = perf_counter_ns()
+    upper_case_letters_set = set(ascii_uppercase)
     
     stacks = []        
     reading_moves = False
@@ -58,10 +57,8 @@ def part_two(_input):
             if not stacks: # initialize stacks after the first row has been read
                 stacks = [""] * (len(line_parts) + 1)
             for stack_index, crate in enumerate(line_parts, start=1):
-                crate_match = re.match("\[([A-Z])\]", crate)
-                if crate_match:
-                    crate_name = crate_match.group(1)                    
-                    stacks[stack_index] = f"{crate_name}{stacks[stack_index]}"
+                if len(crate) > 1 and crate[1] in upper_case_letters_set:                                        
+                    stacks[stack_index] = f"{crate[1]}{stacks[stack_index]}"     
                      
     output = [stack[-1] for stack in stacks if stack]    
     return "".join(output), perf_counter_ns() - start_time
