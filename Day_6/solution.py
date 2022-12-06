@@ -53,7 +53,7 @@ def part_two(_input):
 
 def main():
      
-    with open("/home/predrag/MEGAsync/Development/AOC2022/Day_6/input.txt") as i_file:
+    with open("input.txt") as i_file:
         _input = i_file.read()     
     
     solution_part_one, part_one_time_ns = part_one(_input)    
