@@ -4,5 +4,6 @@ echo ""
 for i in $(ls -d */); do
     cd ./"$i"    
     time python ./solution.py
+    echo ""
     cd ..
 done

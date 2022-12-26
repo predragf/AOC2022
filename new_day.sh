@@ -22,10 +22,10 @@ def main():
     with open(\"input.txt\") as i_file:
         _input = i_file.readlines()        
     
-    solution_part_one, part_one_time_ns = part_one(_input)    
-    solution_part_two, part_two_time_ns = part_two(_input)
     print(\"---------- ${current_day} ----------\")
+    solution_part_one, part_one_time_ns = part_one(_input)    
     print(f\"solution first part: {solution_part_one} ({part_one_time_ns / 1_000_000} ms)\")
+    solution_part_two, part_two_time_ns = part_two(_input)
     print(f\"solution second part: {solution_part_two} ({part_two_time_ns / 1_000_000} ms)\")
 
 if __name__ == \"__main__\":
